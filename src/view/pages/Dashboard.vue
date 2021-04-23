@@ -2,6 +2,8 @@
   <div>
     <!--begin::Dashboard-->
     <b-row >
+      <h1>Guillaume</h1>
+
       <b-col col sm="4">
           <b-card title="Card title" sub-title="Card subtitle">
             <b-card-text>
