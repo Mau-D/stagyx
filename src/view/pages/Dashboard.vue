@@ -17,6 +17,9 @@
             <b-link href="#" class="card-link">Another link</b-link>
           </b-card>      
       </b-col>
+      <b-col>
+        <CodePreview title="allo"/>
+      </b-col>
       <!-- <div class="col-xxl-4">
         <ListWidget9></ListWidget9>
       </div>
@@ -66,6 +69,7 @@ import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 // import StatsWidget7 from "@/view/content/widgets/stats/Widget7.vue";
 // import StatsWidget12 from "@/view/content/widgets/stats/Widget12.vue";
 // import StatsWidget13 from "@/view/content/widgets/stats/Widget13.vue";
+ import CodePreview from "@/view/content/CodePreview.vue";
 
 export default {
   name: "dashboard",
@@ -81,6 +85,7 @@ export default {
     // StatsWidget7,
     // StatsWidget12,
     // StatsWidget13
+    CodePreview
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Dashboard" }]);
