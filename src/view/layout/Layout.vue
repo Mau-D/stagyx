@@ -1,5 +1,5 @@
 <template>
-<!--Enlever la condition -->
+  <!--Enlever la condition -->
   <div class="d-flex flex-column flex-root" v-if="isAuthenticated">
     <!-- begin:: Header Mobile -->
     <KTHeaderMobile></KTHeaderMobile>
@@ -38,7 +38,7 @@
             <div
               :class="{
                 'container-fluid': contentFluid,
-                container: !contentFluid
+                container: !contentFluid,
               }"
             >
               <transition name="fade-in-up">
@@ -68,7 +68,7 @@ import KTScrollTop from "@/view/layout/extras/ScrollTop";
 import Loader from "@/view/content/Loader.vue";
 import {
   ADD_BODY_CLASSNAME,
-  REMOVE_BODY_CLASSNAME
+  REMOVE_BODY_CLASSNAME,
 } from "@/core/services/store/htmlclass.module.js";
 
 export default {
@@ -81,7 +81,7 @@ export default {
     //KTSubheader,
     KTStickyToolbar,
     KTScrollTop,
-    Loader
+    Loader,
   },
   beforeMount() {
     // show page loading
@@ -92,9 +92,9 @@ export default {
   },
   mounted() {
     // check if current user is authenticated
-     if (!this.isAuthenticated) {
-       this.$router.push({ name: "login" });
-     }
+    if (!this.isAuthenticated) {
+      this.$router.push({ name: "login" });
+    }
 
     // Simulate the delay page loading
     setTimeout(() => {
@@ -108,7 +108,7 @@ export default {
       "isAuthenticated",
       "breadcrumbs",
       "pageTitle",
-      "layoutConfig"
+      "layoutConfig",
     ]),
 
     /**
@@ -158,7 +158,18 @@ export default {
      */
     subheaderDisplay() {
       return !!this.layoutConfig("subheader.display");
-    }
-  }
+    },
+  },
 };
 </script>
+<style scoped>
+/*Pour enlever le padding et le margin, pour que la PageGroupe soit à gauche */
+.container {
+  padding: 0;
+  margin: 0;
+}
+#kt_content {
+  padding: 0;
+  margin: 0;
+}
+</style>

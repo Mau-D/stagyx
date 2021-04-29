@@ -1,28 +1,10 @@
 <template>
   <div>
     <!--begin::Dashboard-->
-    <b-row >
-      <h1>Guillaume</h1>
-
-      <b-col col sm="4">
-          <b-card title="Card title" sub-title="Card subtitle">
-            <b-card-text>
-              Some quick example text to build on the
-              <em>card title</em> and make up the bulk of the card's
-              content.
-            </b-card-text>
-
-            <b-card-text
-              >A second paragraph of text in the card.</b-card-text
-            >
-            <a href="#" class="card-link">Card link</a>
-            <b-link href="#" class="card-link">Another link</b-link>
-          </b-card>      
-      </b-col>
-      <b-col>
-        <CodePreview title="allo"/>
-      </b-col>
-      <!-- <div class="col-xxl-4">
+    <!--<b-row>
+     
+      
+     <div class="col-xxl-4">
         <ListWidget9></ListWidget9>
       </div>
       <div class="col-xxl-4">
@@ -52,8 +34,9 @@
       </div>
       <div class="col-xxl-8 order-1 order-xxl-2">
         <AdvancedTableWidget3></AdvancedTableWidget3>
-      </div>-->
-    </b-row>
+      </div>
+    </b-row>-->
+    <PageGroupe></PageGroupe>
     <!--end::Dashboard-->
   </div>
 </template>
@@ -71,13 +54,13 @@ import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 // import StatsWidget7 from "@/view/content/widgets/stats/Widget7.vue";
 // import StatsWidget12 from "@/view/content/widgets/stats/Widget12.vue";
 // import StatsWidget13 from "@/view/content/widgets/stats/Widget13.vue";
- import CodePreview from "@/view/content/CodePreview.vue";
+import PageGroupe from "@/view/pages/PageGroupe";
 
 export default {
   name: "dashboard",
   components: {
-  //  AdvancedTableWidget2,
-  //  AdvancedTableWidget3,
+    //  AdvancedTableWidget2,
+    //  AdvancedTableWidget3,
     //MixedWidget1,
     // ListWidget1,
     // ListWidget3,
@@ -87,7 +70,7 @@ export default {
     // StatsWidget7,
     // StatsWidget12,
     // StatsWidget13
-    CodePreview
+    PageGroupe,
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Dashboard" }]);
@@ -117,7 +100,7 @@ export default {
 
       // set clicked tab index to bootstrap tab
       return parseInt(event.target.getAttribute("data-tab"));
-    }
-  }
+    },
+  },
 };
 </script>
