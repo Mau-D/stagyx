@@ -163,7 +163,7 @@ export default {
 };
 </script>
 <style scoped>
-/*Pour enlever le padding et le margin, pour que la PageGroupe soit à gauche */
+/*Pour enlever le padding et le margin, pour que la PageGroupe soit à gauche et en haut*/
 .container {
   padding: 0;
   margin: 0;

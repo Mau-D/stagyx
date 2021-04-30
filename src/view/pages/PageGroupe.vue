@@ -13,7 +13,8 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
           <Stagiaires></Stagiaires>
         </div>
       </b-col>
-      <b-col sm="9">Il y aura un router view selon l'affichage</b-col>
+      <!-- Section dynamique du contenu sélectionné -->
+      <b-col sm="9"><PageStagiaires></PageStagiaires></b-col>
     </b-row>
   </b-container>
 </template>
@@ -21,12 +22,14 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
 <script>
 import CarteIdentificationGroupe from "../content/components/CarteIdentificationGroupe";
 import Stagiaires from "../content/components/Stagiaires";
+import PageStagiaires from "./PageStagiaires";
 
 export default {
   name: "PageGroupe",
   components: {
     CarteIdentificationGroupe,
     Stagiaires,
+    PageStagiaires,
   },
 };
 </script>
