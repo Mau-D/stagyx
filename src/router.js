@@ -7,13 +7,13 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "/PageTache",
+      redirect: "/Dashboard",
       component: () => import("@/view/layout/Layout"),
       children: [
         {
-          path: "/PageTache",
-          name: "PageTache",
-          component: () => import("@/view/pages/PageTache.vue"),
+          path: "/Dashboard",
+          name: "Dashboard",
+          component: () => import("@/view/pages/Dashboard.vue"),
         },
       ],
       //{

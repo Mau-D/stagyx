@@ -14,7 +14,7 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
         </div>
       </b-col>
       <!-- Section dynamique du contenu sélectionné -->
-      <b-col sm="9"><PageStagiaires></PageStagiaires></b-col>
+      <b-col sm="9" class="px-0"><PageStagiaires></PageStagiaires></b-col>
     </b-row>
   </b-container>
 </template>
@@ -23,7 +23,6 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
 import CarteIdentificationGroupe from "../content/components/CarteIdentificationGroupe";
 import Stagiaires from "../content/components/Stagiaires";
 import PageStagiaires from "./PageStagiaires";
-import MeliMelo from "../content/MeliMelo";
 
 export default {
   name: "PageGroupe",
@@ -31,7 +30,6 @@ export default {
     CarteIdentificationGroupe,
     Stagiaires,
     PageStagiaires,
-    MeliMelo,
   },
 };
 </script>

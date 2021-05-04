@@ -10,7 +10,8 @@
     <!-- begin::Body -->
     <div class="d-flex flex-row flex-column-fluid page">
       <!-- begin:: Aside Left -->
-      <KTAside v-if="asideEnabled"></KTAside>
+      <!-- Enlever v-if="asideEnabled" -->
+      <KTAside></KTAside>
       <!-- end:: Aside Left -->
 
       <div id="kt_wrapper" class="d-flex flex-column flex-row-fluid wrapper">
@@ -50,7 +51,8 @@
         <KTFooter></KTFooter>
       </div>
     </div>
-    <KTStickyToolbar v-if="toolbarDisplay"></KTStickyToolbar>
+    <!-- Enlever aside right 
+    <KTStickyToolbar v-if="toolbarDisplay"></KTStickyToolbar>-->
     <KTScrollTop></KTScrollTop>
   </div>
 </template>
@@ -63,7 +65,7 @@ import KTHeaderMobile from "@/view/layout/header/HeaderMobile.vue";
 import KTFooter from "@/view/layout/footer/Footer.vue";
 import HtmlClass from "@/core/services/htmlclass.service";
 //import KTSubheader from "@/view/layout/subheader/Subheader.vue";
-import KTStickyToolbar from "@/view/layout/extras/StickyToolbar.vue";
+//import KTStickyToolbar from "@/view/layout/extras/StickyToolbar.vue";
 import KTScrollTop from "@/view/layout/extras/ScrollTop";
 import Loader from "@/view/content/Loader.vue";
 import {
@@ -79,7 +81,7 @@ export default {
     KTHeaderMobile,
     KTFooter,
     //KTSubheader,
-    KTStickyToolbar,
+    //KTStickyToolbar,
     KTScrollTop,
     Loader,
   },
@@ -134,38 +136,40 @@ export default {
     loaderLogo() {
       return process.env.BASE_URL + this.layoutConfig("loader.logo");
     },
-
+    /*#################################Parties à effacer: aside right et subheader################################################# */
     /**
      * Check if the left aside menu is enabled
      * @returns {boolean}
-     */
+    
     asideEnabled() {
       return !!this.layoutConfig("aside.self.display");
     },
-
+ */
     /**
      * Set the right toolbar display
-     * @returns {boolean}
-     */
+      //@returns {boolean}
+     
     toolbarDisplay() {
       // return !!this.layoutConfig("toolbar.display");
       return true;
     },
-
+*/
     /**
      * Set the subheader display
      * @returns {boolean}
-     */
+     
     subheaderDisplay() {
       return !!this.layoutConfig("subheader.display");
-    },
+    },*/
+    /*################################################################################## */
   },
 };
 </script>
 <style scoped>
 /*Pour enlever le padding et le margin, pour que la PageGroupe soit à gauche et en haut*/
 .container {
-  padding: 0;
+  padding-top: 0;
+  padding-left: 0;
   margin: 0;
 }
 #kt_content {

@@ -2,21 +2,77 @@
 Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
 <template>
   <div>
+    <v-card outlined tile>
+      <v-card-title>
+        Stagiaires
+        <v-spacer></v-spacer>
+        <b-button variant="success" style="font-weight: bold">
+          <span class="symbol-label">
+            <span class="svg-icon">
+              <!--begin::Svg Icon-->
+              <inline-svg
+                src="media/svg/icons/Communication/Add-user.svg"
+              ></inline-svg>
+              <!--end::Svg Icon-->
+            </span>
+          </span>
+          Nouveau</b-button
+        >
+      </v-card-title>
+      <v-card-subtitle> Nombre de stagiaires </v-card-subtitle>
+    </v-card>
     <v-data-table
-      v-model="selected"
       :headers="headers"
-      :items="desserts"
-      :single-select="singleSelect"
+      :items="stagiaires"
+      :items-per-page="15"
       item-key="name"
       show-select
-      class="elevation-1"
+      v-model="selected"
+      :single-select="singleSelect"
+      hide-default-footer
     >
-      <template v-slot:top>
-        <v-switch
-          v-model="singleSelect"
-          label="Single select"
-          class="pa-3"
-        ></v-switch>
+      <!-- Problème avec eslint -->
+      <!-- To disable these errors, add the following rule to your eslint configuration: "vue/valid-v-slot": ["error", { "allowModifiers": true }] -->
+      <template v-slot:item.action="{ item }">
+        <span class="symbol-label">
+          <span
+            class="svg-icon svg-icon-md svg-icon-primary"
+            @click="editItem(item)"
+          >
+            <!--begin::Svg Icon-->
+            <inline-svg
+              @click="editItem(item)"
+              src="media/svg/icons/Communication/Write.svg"
+            ></inline-svg>
+            <!--end::Svg Icon-->
+          </span>
+        </span>
+        <!-- Supprimer -->
+        <span class="symbol-label">
+          <span
+            class="svg-icon svg-icon-md"
+            style="fill: #3699ff"
+            @click="deleteItem(item)"
+          >
+            <!--begin::Svg Icon-->
+            <inline-svg
+              src="media/svg/icons/Communication/trash-can-outline.svg"
+            ></inline-svg>
+            <!--end::Svg Icon-->
+          </span>
+        </span>
+      </template>
+      <!-- Pour les étoiles de l'évaluation dynamique -->
+      <template v-slot:item.evaluation="{ item }">
+        <div class="ml-5">
+          <!-- La class="ml-5" c'est pour lui donner de la margin à droite. -->
+          <div v-for="n in item.evaluation" :key="n">
+            <img src="media/logos/stars.png" alt="image" style="width: 5rem" />
+            <span class="text-muted font-weight-bold d-block">{{
+              item.rate
+            }}</span>
+          </div>
+        </div>
       </template>
     </v-data-table>
   </div>
@@ -31,100 +87,53 @@ export default {
       selected: [],
       headers: [
         {
-          text: "Dessert (100g serving)",
+          text: "Stagiaires",
           align: "left",
-          sortable: false,
           value: "name",
         },
-        { text: "Calories", value: "calories" },
-        { text: "Fat (g)", value: "fat" },
-        { text: "Carbs (g)", value: "carbs" },
-        { text: "Protein (g)", value: "protein" },
-        { text: "Iron (%)", value: "iron" },
+        { text: "Hôte", value: "hote" },
+        { text: "Évaluation", value: "evaluation" },
+        { text: "ACTION", value: "action", sortable: false },
       ],
-      desserts: [
+      stagiaires: [
         {
-          name: "Frozen Yogurt",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: "1%",
+          name: "Maud Harvey",
+          hote: "Cégep de Trois-Rivières",
+          evaluation: 3,
+          action: `<h1>allo</h1>`,
         },
         {
-          name: "Ice cream sandwich",
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: "1%",
+          name: "Machin Chose",
+          hote: "Cégep de Trois-Rivières",
+          evaluation: 1,
         },
         {
-          name: "Eclair",
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: "7%",
+          name: "Guillaume Labrecque",
+          hote: "Action Web",
+          evaluation: 2,
         },
         {
-          name: "Cupcake",
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: "8%",
-        },
-        {
-          name: "Gingerbread",
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          iron: "16%",
-        },
-        {
-          name: "Jelly bean",
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          iron: "0%",
-        },
-        {
-          name: "Lollipop",
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          iron: "2%",
-        },
-        {
-          name: "Honeycomb",
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          iron: "45%",
-        },
-        {
-          name: "Donut",
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          iron: "22%",
-        },
-        {
-          name: "KitKat",
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          iron: "6%",
+          name: "Jean Jacques",
+          hote: "Cégep de Trois-Rivières",
+          evaluation: 4,
         },
       ],
     };
+  },
+  methods: {
+    editItem(item) {
+      this.editedIndex = this.stagiaires.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialog = true;
+      console.log("edition" + item.name);
+    },
+
+    deleteItem(item) {
+      this.editedIndex = this.stagiaires.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialogDelete = true;
+      console.log("suppression" + item.name);
+    },
   },
 };
 </script>
