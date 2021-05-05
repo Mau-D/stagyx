@@ -36,12 +36,7 @@
 
           <!-- begin:: Content Body -->
           <div class="d-flex flex-column-fluid">
-            <div
-              :class="{
-                'container-fluid': contentFluid,
-                container: !contentFluid,
-              }"
-            >
+            <div class="container-fluid p-0">
               <transition name="fade-in-up">
                 <router-view />
               </transition>
