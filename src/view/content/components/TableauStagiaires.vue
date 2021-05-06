@@ -33,7 +33,7 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
     >
       <!-- Problème avec eslint -->
       <!-- To disable these errors, add the following rule to your eslint configuration: "vue/valid-v-slot": ["error", { "allowModifiers": true }] -->
-      <template v-slot:item.action="{ item }">
+      <template v-slot:[`item.action`]="{ item }">
         <span class="symbol-label">
           <span
             class="svg-icon svg-icon-md svg-icon-primary"
@@ -63,7 +63,7 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
         </span>
       </template>
       <!-- Pour les étoiles de l'évaluation dynamique -->
-      <template v-slot:item.evaluation="{ item }">
+      <template v-slot:[`item.evaluation`]="{ item }">
         <div class="ml-5">
           <!-- La class="ml-5" c'est pour lui donner de la margin à droite. -->
           <div v-for="n in item.evaluation" :key="n">
@@ -100,7 +100,6 @@ export default {
           name: "Maud Harvey",
           hote: "Cégep de Trois-Rivières",
           evaluation: 3,
-          action: `<h1>allo</h1>`,
         },
         {
           name: "Machin Chose",

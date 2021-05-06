@@ -48,10 +48,10 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
     <b-row class="mb-5">
       <b-col class="text-left">
         <span class="symbol-label mx-1">
-          <span class="svg-icon svg-icon-lg" style="fill: #bbdbfb">
+          <span class="svg-icon svg-icon-lg svg-icon-primary">
             <!--begin::Svg Icon-->
             <inline-svg
-              src="media/svg/icons/Communication/comment-text-multiple.svg"
+              src="media/svg/icons/Communication/Group-chat.svg"
             ></inline-svg>
             <!--end::Svg Icon-->
           </span>

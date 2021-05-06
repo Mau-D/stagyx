@@ -29,7 +29,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
         </b-row>
       </b-col>
       <!-- section filtre, aside de droite -->
-      <b-col sm="3" class="bg-light p-0">
+      <b-col sm="3" class="bg-light vh-100 p-0">
         <Profils></Profils>
       </b-col>
     </b-row>
