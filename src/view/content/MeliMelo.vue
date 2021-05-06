@@ -144,37 +144,31 @@
     <!-- ################################################################################# -->
     <div>
       <h1>CarteTuteur.vue</h1>
-      <b-card class="CarteTuteur p-0 text-left">
-        <div class="d-flex flex-row">
-          <div class="d-flex flex-column font-weight-bold p-2">
-            <a class="text-dark text-hover-primary mb-1 font-size-lg">
-              Nom du tuteur
-            </a>
-            <span class="text-muted">
-              Entrepise
-            </span>
-            <v-col class="text-center" cols="12" sm="4">
-              <div class="m-0">
-                <b-button class="btn-info" style="font-weight: bold">
-                  Contacter
-                </b-button>
-              </div>
-            </v-col>
-          </div>
-          <div>
-            <span class="symbol-label">
-              <!--Pour la src dans un v-for      :src="item.img"       -->
-              <img
-                src="media/svg/avatars/001-boy.svg"
-                class="h-75 align-self-end"
-                alt=""
-                style="width: 6rem"
-                align-v="end"
-              />
-            </span>
-          </div>
-        </div>
-      </b-card>
+      <b-container fluid>
+          <b-row>
+            <b-col sm="6" class="font-weight-bold p-0">
+              <p class="m-0" style="font-size: 1.3rem; font-weight: bold">
+                Nom du tuteur
+              </p>
+              <span class="text-muted d-block"> Entreprise </span>
+              <b-button class="btn-info btn-sm mt-5" style="font-weight: bold">
+                Contacter
+              </b-button>
+            </b-col>
+
+            <b-col sm="6">
+              <span class="symbol-label">
+                <!--Pour la src dans un v-for      :src="item.img"       -->
+                <img
+                  src="media/svg/avatars/001-boy.svg"
+                  class="h-75 align-self-end"
+                  alt=""
+                  style="width: 6rem"
+                />
+              </span>
+            </b-col>
+          </b-row>
+        </b-container>
     </div>
     <!-- ################################################################################# -->
         <b-container class="d-flex flex-row">
