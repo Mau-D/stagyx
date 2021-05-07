@@ -329,6 +329,39 @@
               </span>
             </div>
           </div>
+<<<<<<< HEAD
+        </template>
+      </tbody>
+    </div>
+    <!-- ################################################################################# -->
+    <div>
+      <h1>CarteTuteur.vue</h1>
+      <b-container fluid>
+          <b-row>
+            <b-col sm="6" class="font-weight-bold p-0">
+              <p class="m-0" style="font-size: 1.3rem; font-weight: bold">
+                Nom du tuteur
+              </p>
+              <span class="text-muted d-block"> Entreprise </span>
+              <b-button class="btn-info btn-sm mt-5" style="font-weight: bold">
+                Contacter
+              </b-button>
+            </b-col>
+
+            <b-col sm="6">
+              <span class="symbol-label">
+                <!--Pour la src dans un v-for      :src="item.img"       -->
+                <img
+                  src="media/svg/avatars/001-boy.svg"
+                  class="h-75 align-self-end"
+                  alt=""
+                  style="width: 6rem"
+                />
+              </span>
+            </b-col>
+          </b-row>
+        </b-container>
+=======
         </b-card>
       </div>
       <!-- ################################################################################# -->
@@ -355,6 +388,7 @@
           </span>
         </b-col>
       </b-container>
+>>>>>>> 2c8e97fc2b3620e252085006c3de198dcaaba88b
     </div>
   </div>
 </template>
