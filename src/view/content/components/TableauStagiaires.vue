@@ -19,7 +19,7 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
           Nouveau</b-button
         >
       </v-card-title>
-      <v-card-subtitle> Nombre de stagiaires </v-card-subtitle>
+      <v-card-subtitle>{{ stagiaires.length }} stagiaires </v-card-subtitle>
     </v-card>
     <v-data-table
       :headers="headers"
@@ -31,8 +31,57 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
       :single-select="singleSelect"
       hide-default-footer
     >
-      <!-- Problème avec eslint -->
-      <!-- To disable these errors, add the following rule to your eslint configuration: "vue/valid-v-slot": ["error", { "allowModifiers": true }] -->
+      <!-- v-slot pour l'affichage des stagiaires(avatar, nom, spécialites) -->
+      <template v-slot:[`item.identification`]="{ item }">
+        <div class="d-flex justify-content-between my-1">
+          <div class="d-flex justify-content-start">
+            <div class="symbol symbol-50 symbol-light my-auto">
+              <span class="symbol-label">
+                <img
+                  :src="item.identification.img"
+                  class="h-75 align-self-end"
+                  alt="avatar"
+                />
+              </span>
+            </div>
+            <div class="my-auto">
+              <p
+                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg"
+              >
+                {{ item.identification.name }}
+              </p>
+              <span class="text-muted font-weight-bold d-block">{{
+                item.identification.desc
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </template>
+      <!-- v-slot Pour les étoiles de l'évaluation dynamique -->
+      <template v-slot:[`item.evaluation`]="{ item }">
+        <div class="ml-5">
+          <!-- La class="ml-5" c'est pour lui donner de la margin à droite. -->
+          <div>
+            <star-rating
+              v-model="item.evaluation"
+              :read-only="true"
+              :increment="0.1"
+              :star-size="14"
+              :show-rating="false"
+              :padding="2"
+              :border-width="2"
+              border-color="#ffd055"
+              inactive-color="#ffffff"
+            >
+            </star-rating>
+
+            <span class="text-muted font-weight-bold d-block">{{
+              item.rate
+            }}</span>
+          </div>
+        </div>
+      </template>
+      <!-- v-slot pour les boutons d'action -->
       <template v-slot:[`item.action`]="{ item }">
         <span class="symbol-label">
           <span
@@ -62,24 +111,17 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
           </span>
         </span>
       </template>
-      <!-- Pour les étoiles de l'évaluation dynamique -->
-      <template v-slot:[`item.evaluation`]="{ item }">
-        <div class="ml-5">
-          <!-- La class="ml-5" c'est pour lui donner de la margin à droite. -->
-          <div v-for="n in item.evaluation" :key="n">
-            <img src="media/logos/stars.png" alt="image" style="width: 5rem" />
-            <span class="text-muted font-weight-bold d-block">{{
-              item.rate
-            }}</span>
-          </div>
-        </div>
-      </template>
     </v-data-table>
   </div>
 </template>
 
 <script>
+//Composant pour la gestion de la notation par étoiles
+import StarRating from "vue-star-rating";
 export default {
+  components: {
+    StarRating,
+  },
   name: "TableauStagiaires",
   data() {
     return {
@@ -89,7 +131,7 @@ export default {
         {
           text: "Stagiaires",
           align: "left",
-          value: "name",
+          value: "identification",
         },
         { text: "Hôte", value: "hote" },
         { text: "Évaluation", value: "evaluation" },
@@ -97,23 +139,40 @@ export default {
       ],
       stagiaires: [
         {
-          name: "Maud Harvey",
+          identification: {
+            img: "media/svg/avatars/001-boy.svg",
+            name: "Brad Simmons",
+            desc: "HTML, JS, ReactJS",
+          },
+
           hote: "Cégep de Trois-Rivières",
-          evaluation: 3,
+          evaluation: 3.4,
         },
         {
-          name: "Machin Chose",
-          hote: "Cégep de Trois-Rivières",
+          identification: {
+            img: "media/svg/avatars/018-girl-9.svg",
+            name: "Jessie Clarcson",
+            desc: "C#, ASP.NET, MS SQL",
+          },
+          hote: "Poka",
           evaluation: 1,
         },
         {
-          name: "Guillaume Labrecque",
+          identification: {
+            img: "media/svg/avatars/014-girl-7.svg",
+            name: "Lebron Wayde",
+            desc: "PHP, Laravel, VueJS",
+          },
           hote: "Action Web",
           evaluation: 2,
         },
         {
-          name: "Jean Jacques",
-          hote: "Cégep de Trois-Rivières",
+          identification: {
+            img: "media/svg/avatars/047-girl-25.svg",
+            name: "Natali Trump",
+            desc: "Python, PostgreSQL, ReactJS",
+          },
+          hote: "Ubisoft",
           evaluation: 4,
         },
       ],
