@@ -18,7 +18,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
       </b-col>
       <!-- Titre, date et Logo -->
       <b-col sm="7">
-        <h5>Exploration du milieu de stage</h5>
+        <h5>{{ name }}</h5>
 
         <span class="symbol-label mx-1">
           <span class="svg-icon svg-icon-lg svg-icon-primary">
@@ -27,7 +27,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
             <!--end::Svg Icon-->
           </span>
         </span>
-        <p class="text-muted d-inline">date de la tâche</p>
+        <p class="text-muted d-inline">{{ date }}</p>
       </b-col>
       <!-- Bouton voir -->
       <b-col sm="3">
@@ -41,7 +41,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
     <!-- Texte -->
     <b-row class="mb-5">
       <b-col>
-        <p>kslakshdfkasjhdfkajhdf</p>
+        <p>{{ description }}</p>
       </b-col>
     </b-row>
     <!-- Comments et moyenne de l'évaluation -->
@@ -58,16 +58,34 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
         </span>
         <p class="text-muted d-inline">Nombre commentaires</p>
       </b-col>
-      <b-col class="text-right mr-3">
-        <img src="media/logos/stars.png" alt="image" style="width: 5rem" />
+      <b-col class="text-right">
+        <star-rating
+          v-model="evaluation"
+          :read-only="true"
+          :increment="0.1"
+          :star-size="14"
+          :show-rating="false"
+          :padding="2"
+          :border-width="2"
+          border-color="#ffd055"
+          inactive-color="#ffffff"
+          inline
+        >
+        </star-rating>
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
+//Composant pour la gestion de la notation par étoiles
+import StarRating from "vue-star-rating";
 export default {
+  components: {
+    StarRating,
+  },
   name: "Tache",
+  props: ["name", "date", "description", "evaluation"],
 };
 </script>
 

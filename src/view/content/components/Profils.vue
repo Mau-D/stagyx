@@ -1,7 +1,7 @@
 <!--Profils.vue, composant à trois sections, dans le aside de droite, pour le profil du stagaire sélectionné de son tuteur et de son entreprise-hôte
 Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
 <template>
-  <b-container fluid class="px-2">
+  <b-container fluid>
     <!-- Profil du stagiaire -->
 
     <b-row class="my-5">
@@ -24,9 +24,9 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
     <b-row class="my-5">
       <b-col>
         <h1 class="text-muted">Tuteur</h1>
-        <b-container fluid>
+        <b-container>
           <b-row>
-            <b-col sm="6" class="font-weight-bold p-0">
+            <b-col sm="6" class="font-weight-bold">
               <p class="m-0" style="font-size: 1.3rem; font-weight: bold">
                 Nom du tuteur
               </p>
@@ -43,7 +43,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
                   src="media/svg/avatars/001-boy.svg"
                   class="h-75 align-self-end"
                   alt=""
-                  style="width: 6rem"
+                  style="width: 5rem"
                 />
               </span>
             </b-col>

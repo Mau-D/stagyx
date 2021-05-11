@@ -21,7 +21,7 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
         </b-container>
       </b-col>
       <!-- section filtre -->
-      <b-col sm="3" class="bgWhite vh-100 pl-7">
+      <b-col sm="3" class="bgWhite vh-100 py-auto">
         <FiltreStagiaires></FiltreStagiaires>
       </b-col>
     </b-row>

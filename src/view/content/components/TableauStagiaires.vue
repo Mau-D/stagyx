@@ -74,10 +74,11 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
               inactive-color="#ffffff"
             >
             </star-rating>
-
+            <!-- ######################################## -->
             <span class="text-muted font-weight-bold d-block">{{
               item.rate
             }}</span>
+            <!-- ######################################## -->
           </div>
         </div>
       </template>
@@ -172,7 +173,7 @@ export default {
             name: "Natali Trump",
             desc: "Python, PostgreSQL, ReactJS",
           },
-          hote: "Ubisoft",
+          hote: "Acolyte",
           evaluation: 4,
         },
       ],
