@@ -1,8 +1,8 @@
 <!--PageStagiaires.vue, Contenu lors de la sélection de Stagiaires dans le menu, inclus les composants: TableauStagiaires et FiltreStagiaires 
 Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
 <template>
-  <b-container class="px-0">
-    <b-row>
+  <b-container class="p-0 h-100">
+    <b-row class="h-100">
       <!-- section tableau -->
       <b-col sm="9" class="px-0">
         <b-container>
@@ -21,7 +21,7 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
         </b-container>
       </b-col>
       <!-- section filtre -->
-      <b-col sm="3" class="bgWhite vh-100 py-auto">
+      <b-col sm="3" class="bg-light">
         <FiltreStagiaires></FiltreStagiaires>
       </b-col>
     </b-row>
@@ -42,7 +42,4 @@ export default {
 </script>
 
 <style scoped>
-.bgWhite {
-  background-color: white !important;
-}
 </style>

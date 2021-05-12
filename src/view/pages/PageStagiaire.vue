@@ -1,8 +1,8 @@
 <!--PageStagiaire.vue, page contenant la liste des tâches , un graphiques des évaluations et les différents profils pour un stagiaires sélectionné
 Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
 <template>
-  <b-container class="px-0">
-    <b-row>
+  <b-container class="px-0 h-100">
+    <b-row class="h-100">
       <!-- section du graphique et de la liste des tâches -->
       <b-col sm="9" class="px-2">
         <!-- Graphique -->
@@ -36,7 +36,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
         </b-row>
       </b-col>
       <!-- section filtre, aside de droite -->
-      <b-col sm="3" class="bg-light vh-100 p-0">
+      <b-col sm="3" class="bg-light p-2">
         <Profils></Profils>
       </b-col>
     </b-row>

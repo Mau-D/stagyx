@@ -1,7 +1,7 @@
 <!--Profils.vue, composant à trois sections, dans le aside de droite, pour le profil du stagaire sélectionné de son tuteur et de son entreprise-hôte
 Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
 <template>
-  <b-container fluid>
+  <b-container fluid class="p-0">
     <!-- Profil du stagiaire -->
 
     <b-row class="my-5">

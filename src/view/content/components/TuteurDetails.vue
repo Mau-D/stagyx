@@ -1,7 +1,7 @@
 <!--TuteurDetails.vue, Section des détails du tuteur
 Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
 <template>
-  <b-container class="bg-light my-5">
+  <b-container class="bgWhite my-5">
     <b-row class="py-5">
       <!-- section gauche Tuteur -->
       <b-col sm="6">
@@ -155,5 +155,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.bgWhite {
+  background-color: white;
+}
 </style>
