@@ -18,7 +18,9 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
         </div>
       </b-col>
       <!-- Section dynamique du contenu sélectionné -->
-      <b-col sm="9" class="px-0"><router-view></router-view></b-col>
+      <b-col sm="9" class="px-0">
+        <router-view></router-view>
+      </b-col>
     </b-row>
   </b-container>
 </template>

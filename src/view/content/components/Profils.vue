@@ -59,7 +59,8 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
           <!-- image -->
           <b-row class="my-4">
             <b-img
-              src="https://media-exp1.licdn.com/dms/image/C510BAQFwLtju9HLGmA/company-logo_200_200/0/1519904112141?e=2159024400&v=beta&t=IZ6QmSlVgBNQPlKOGS8Dgqnf0YrH9URZmphNNKuSbas"
+              class="imageEntreprise"
+              src="https://phenixweb.com/img/phenix/logo_PhenixWeb.png"
               fluid
               alt="Responsive image"
             ></b-img>
@@ -106,5 +107,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.imageEntreprise {
+  padding: 0px 12px;
+  height: 40px;
+}
 </style>
