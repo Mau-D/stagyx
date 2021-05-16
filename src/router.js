@@ -15,6 +15,21 @@ export default new Router({
           name: "Dashboard",
           component: () => import("@/view/pages/Dashboard.vue"),
         },
+        //Lors de la sélection d'un groupe redirigé vers PageGroupe avec le id=no.Groupe
+        {
+          path: "/pagegroupe",
+          name: "page-groupe",
+          component: () =>
+            import("@/view/pages/PageGroupe.vue"),
+            children: [
+            {
+              path: "/stagiaires",
+              name: "Stagiaires",
+              component: () => import("@/view/pages/PageStagiaires.vue"),
+            },
+          ]
+
+        }
       ],
       //{
       //  path: "/builder",
