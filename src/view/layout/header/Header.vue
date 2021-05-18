@@ -26,7 +26,7 @@
         </div>
       </div>
       <!-- end:: Header Menu -->
-      <KTTopbar></KTTopbar>
+      <!-- <KTTopbar></KTTopbar> -->
     </div>
   </div>
   <!-- end:: Header -->
@@ -34,7 +34,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import KTTopbar from "@/view/layout/header/Topbar.vue";
+// import KTTopbar from "@/view/layout/header/Topbar.vue";
 import KTLayoutHeader from "@/assets/js/layout/base/header.js";
 import KTLayoutHeaderMenu from "@/assets/js/layout/base/header-menu.js";
 import KTMenu from "@/view/layout/header/Menu.vue";
@@ -42,7 +42,7 @@ import KTMenu from "@/view/layout/header/Menu.vue";
 export default {
   name: "KTHeader",
   components: {
-    KTTopbar,
+    // KTTopbar,
     KTMenu
   },
   mounted() {

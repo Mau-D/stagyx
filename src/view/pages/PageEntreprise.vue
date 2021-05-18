@@ -2,32 +2,34 @@
   <b-container fluid>
     <b-row>
       <b-col class="entreprise" cols="9">
-        <Entreprise />
+        <EntrepriseDetails />
       </b-col>
       <b-col class="encadreMauve" cols="3">
-        <h1>test2</h1>
+        <EntrepriseEnChiffre />
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import Entreprise from "../content/components/Entreprise";
+import EntrepriseDetails from "../content/components/EntrepriseDetails";
+import EntrepriseEnChiffre from "../content/components/EntrepriseEnChiffre";
 export default {
     name:"PageEntreprise",
     components:{
-      Entreprise,
+      EntrepriseDetails,
+      EntrepriseEnChiffre,
     }
 }
 </script>
 
 <style>
-.entreprise {
+/* .entreprise {
   background-color: pink;
   height: 80vh;
 }
 .encadreMauve {
   background-color: blue;
   height: 80vh;
-}
+} */
 </style>
