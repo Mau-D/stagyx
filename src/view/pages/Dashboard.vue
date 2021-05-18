@@ -36,7 +36,7 @@
         <AdvancedTableWidget3></AdvancedTableWidget3>
       </div>
     </b-row>-->
-    <PageGroupe></PageGroupe>
+    <PageGroupes></PageGroupes>
     <!--end::Dashboard-->
   </div>
 </template>
@@ -54,7 +54,7 @@ import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 // import StatsWidget7 from "@/view/content/widgets/stats/Widget7.vue";
 // import StatsWidget12 from "@/view/content/widgets/stats/Widget12.vue";
 // import StatsWidget13 from "@/view/content/widgets/stats/Widget13.vue";
-import PageGroupe from "@/view/pages/PageGroupe";
+import PageGroupes from "@/view/pages/PageGroupes";
 
 export default {
   name: "dashboard",
@@ -70,7 +70,7 @@ export default {
     // StatsWidget7,
     // StatsWidget12,
     // StatsWidget13
-    PageGroupe,
+    PageGroupes,
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Dashboard" }]);
