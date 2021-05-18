@@ -7,6 +7,7 @@ export default new Router({
   routes: [
     {
       path: "/",
+<<<<<<< HEAD
       redirect: "/PageTest",
       component: () => import("@/view/layout/Layout"),
       children: [
@@ -14,8 +15,88 @@ export default new Router({
           path: "/PageTest",
           name: "PageTest",
           component: () => import("@/view/pages/PageTest.vue"),
+=======
+      redirect: "/Dashboard",
+      component: () => import("@/view/layout/Layout"),
+      children: [
+        {
+          path: "/Dashboard",
+          name: "Dashboard",
+          component: () => import("@/view/pages/Dashboard.vue"),
+          children:[
+               //Test de route pour la PageGroupes et la PageGroupe
+    //  {
+    //       name: "groupes",
+    //       path: "/groupes",
+    //       component: () => import("@/view/pages/PageGroupes"),
+    //   },
+            {
+              name: "groupe",
+              path: "/groupe",
+              component: () => import("@/view/pages/PageGroupe"),
+              children: [
+                {
+                  path: "/entreprise",
+                  name: "Entreprise",
+                  component: () => import("@/view/pages/PageEntreprise.vue"),
+                }, 
+                {
+                  path: "/stagiaires",
+                  name: "Stagiaires",
+                  component: () => import("@/view/pages/PageStagiaires.vue"),
+                }, 
+                {
+                  path: "/stagiaire",
+                  name: "Stagiaire",
+                  component: () => import("@/view/pages/PageStagiaire.vue"),
+                },
+                 {
+                  path: "/tuteurs",
+                  name: "Tuteurs",
+                  component: () => import("@/view/pages/PageTuteurs.vue"),
+                },  
+              ],
+            },
+          ]
+            
+>>>>>>> 7019b556a7d51dfa71028420a13feac23737b3e0
+        },
+        //Lors de la sélection d'un groupe redirigé vers PageGroupe avec le id=no.Groupe
+        {
+          path: "/pagegroupe",
+          name: "page-groupe",
+          component: () =>
+            import("@/view/pages/PageGroupe.vue"),
+            children: [
+            {
+              path: "/stagiaires",
+              name: "Stagiaires",
+              component: () => import("@/view/pages/PageStagiaires.vue"),
+            },
+          ]
+
+        }
+      ],
+    },
+    {
+      path: "/",
+      component: () => import("@/view/pages/auth/login_pages/Login-1"),
+      children: [
+        {
+          name: "login",
+          path: "/login",
+          component: () => import("@/view/pages/auth/login_pages/Login-1"),
+        },
+        {
+          name: "register",
+          path: "/register",
+          component: () => import("@/view/pages/auth/login_pages/Login-1"),
         },
       ],
+    },
+    
+    ],
+});
       //{
       //  path: "/builder",
       //  name: "builder",
@@ -457,23 +538,7 @@ export default new Router({
       //       component: () => import("@/view/pages/error/Error-6.vue")
       //     }
       //   ]
-    },
-    {
-      path: "/",
-      component: () => import("@/view/pages/auth/login_pages/Login-1"),
-      children: [
-        {
-          name: "login",
-          path: "/login",
-          component: () => import("@/view/pages/auth/login_pages/Login-1"),
-        },
-        {
-          name: "register",
-          path: "/register",
-          component: () => import("@/view/pages/auth/login_pages/Login-1"),
-        },
-      ],
-    },
+    
     // {
     //   path: "*",
     //   redirect: "/404"
@@ -484,5 +549,4 @@ export default new Router({
     //   name: "404",
     //   component: () => import("@/view/pages/error/Error-1.vue")
     //},
-  ],
-});
+ 

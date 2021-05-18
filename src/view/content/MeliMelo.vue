@@ -329,7 +329,6 @@
               </span>
             </div>
           </div>
-<<<<<<< HEAD
         </template>
       </tbody>
     </div>
@@ -361,34 +360,6 @@
             </b-col>
           </b-row>
         </b-container>
-=======
-        </b-card>
-      </div>
-      <!-- ################################################################################# -->
-      <b-container class="d-flex flex-row">
-        <b-col class="d-flex flex-column font-weight-bold p-2">
-          <a class="text-dark text-hover-primary mb-1 font-size-lg">
-            Nom du tuteur
-          </a>
-          <span class="text-muted"> Entrepise </span>
-          <b-button class="btn-info" style="font-weight: bold">
-            Contacter
-          </b-button>
-        </b-col>
-        <b-col>
-          <span class="symbol-label">
-            <!--Pour la src dans un v-for      :src="item.img"       -->
-            <img
-              src="media/svg/avatars/001-boy.svg"
-              class="h-75 align-self-end"
-              alt=""
-              style="width: 6rem"
-              align-v="end"
-            />
-          </span>
-        </b-col>
-      </b-container>
->>>>>>> 2c8e97fc2b3620e252085006c3de198dcaaba88b
     </div>
   </div>
 </template>

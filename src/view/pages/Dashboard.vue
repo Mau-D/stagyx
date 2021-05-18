@@ -1,7 +1,20 @@
 <template>
   <div>
-    <!--begin::Dashboard-->
-    <!--<b-row>
+    <div>
+      <!--<router-link to="/groupes"> </router-link>-->
+      <router-link to="/groupe">PageGroupe</router-link>
+    </div>
+    <div>
+      <!-- Test pour les routes imbriquées, dans la PageGroupe -->
+      <router-link to="/entreprise">Entreprise</router-link>
+      <router-link to="/stagiaires">Stagiaires</router-link>
+      <router-link to="/stagiaire">Stagiaire</router-link>
+      <router-link to="/tuteurs">Tuteurs</router-link>
+    </div>
+
+    <div>
+      <!--begin::Dashboard-->
+      <!--<b-row>
      
       
      <div class="col-xxl-4">
@@ -36,8 +49,13 @@
         <AdvancedTableWidget3></AdvancedTableWidget3>
       </div>
     </b-row>-->
-    <PageGroupe></PageGroupe>
-    <!--end::Dashboard-->
+      <!-- Links pour les test de routes -->
+
+      <div>
+        <router-view></router-view>
+      </div>
+      <!--end::Dashboard-->
+    </div>
   </div>
 </template>
 
@@ -54,7 +72,7 @@ import { SET_BREADCRUMB } from "@/core/services/store/breadcrumbs.module";
 // import StatsWidget7 from "@/view/content/widgets/stats/Widget7.vue";
 // import StatsWidget12 from "@/view/content/widgets/stats/Widget12.vue";
 // import StatsWidget13 from "@/view/content/widgets/stats/Widget13.vue";
-import PageGroupe from "@/view/pages/PageGroupe";
+//import PageGroupe from "@/view/pages/PageGroupe";
 
 export default {
   name: "dashboard",
@@ -70,7 +88,7 @@ export default {
     // StatsWidget7,
     // StatsWidget12,
     // StatsWidget13
-    PageGroupe,
+    //PageGroupe,
   },
   mounted() {
     this.$store.dispatch(SET_BREADCRUMB, [{ title: "Dashboard" }]);

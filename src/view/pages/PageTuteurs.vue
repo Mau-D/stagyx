@@ -1,8 +1,8 @@
 <!--PageTuteurs.vue, page contenant les détails des tuteurs par groupe sélectionné le aside de droite comporte le nombre de stagiaires et d'entreprises
 Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
 <template>
-  <b-container>
-    <b-row>
+  <b-container class="h-100">
+    <b-row class="h-100">
       <!-- section des cartes des tuteurs -->
       <b-col sm="9" class="px-0">
         <b-container class="pl-0">
@@ -38,7 +38,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
         </b-container>
       </b-col>
       <!-- section des deux cartes pour le nombres de stagiaires et d'entreprises -->
-      <b-col sm="3" class="bg-light vh-100">
+      <b-col sm="3" class="bg-light">
         <TuteurEnChiffre></TuteurEnChiffre>
       </b-col>
     </b-row>
