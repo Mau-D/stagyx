@@ -2,17 +2,68 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9" class="containerTache">
-        <b-row class="barometre pt-5">
+        <b-row class="barometre ">
           <b-col cols="7">
             <h3>Détail de la tâche</h3>
           </b-col>
-          <b-col cols="5" class="speedometer">
-            <img
+          <b-col cols="5" class="speedo">
+          <!-- class="speedometer"-->
+            <div class="speedometer pl-5">
+              <vue-speedometer
+                :width="125"
+                :height="60"
+                :needleHeightRatio="0.7"
+                :value="500"
+                currentValueText=""
+                :segmentColors="[
+                  '#6ad72d',
+                  '#aee228',
+                  '#ecdb23',
+                  '#f6961e',
+                  '#ff471a',
+                ]"
+                :customSegmentLabels="[
+                  {
+                    text: '+',
+                    position: 'INSIDE',
+                    color: '#555',
+                  },
+                  {
+                    text: '',
+                    position: 'INSIDE',
+                    color: '#555',
+                  },
+                  {
+                    text: 'Ok',
+                    position: 'INSIDE',
+                    color: '#555',
+                  },
+                  {
+                    text: '',
+                    position: 'INSIDE',
+                    color: '#555',
+                  },
+                  {
+                    text: '-',
+                    position: 'INSIDE',
+                    color: '#555',
+                  },
+                ]"
+                :ringWidth="20"
+                :needleTransitionDuration="3333"
+                needleTransition="easeElastic"
+                needleColor="#5a6268"
+                textColor="#d8dee9"
+                labelFontSize="8px"
+              />
+            </div>
+
+            <!-- <img
               class="speedometer"
               src="https://pngimg.com/uploads/gauge/gauge_PNG27.png"
               alt="speedometer"
-            />
-            <h5 class="text-muted pl-5">
+            /> -->
+            <h5 class="text-muted pr-5">
               15 tâche
             </h5>
             <!-- <vue-speedometer /> -->
@@ -130,7 +181,7 @@
           </b-col>
         </b-row>
       </b-col>
-      <b-col cols="3" class="sectionDroite">
+      <b-col cols="3" class="sectionDroite pt-0">
         <b-row class="carteDroite">
           <b-col>
             <h1 class="titreDroite text-muted pt-4">Profil</h1>
@@ -182,9 +233,6 @@
                   Contacter
                 </b-button>
               </b-row>
-              <b-row>
-                <vue-speedometer />
-              </b-row>
             </b-col>
           </b-col>
         </b-row>
@@ -202,9 +250,6 @@ export default {
     CarteTuteurs,
     VueSpeedometer,
   },
-  template: `<vue-speedometer />`,
-  // components: { VueSpeedometer },
-  // template: `<vue-speedometer />`,
 };
 </script>
 
@@ -224,7 +269,7 @@ export default {
   font-weight: bold;
 }
 .speedometer {
-  height: 50px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -248,8 +293,8 @@ export default {
 }
 .carteDroite {
   background-color: #ffffff;
-  margin: 0px 5px;
-  border-radius: 10px;
+  margin: 0px 0px 0px 5px;
+  padding-right: 0px;
   height: 100%;
 }
 .imgEntreprise img {

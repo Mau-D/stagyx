@@ -30,12 +30,15 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
         <p class="text-muted d-inline">{{ date }}</p>
       </b-col>
       <!-- Bouton voir -->
+      <!-- /pageTache -->
       <b-col sm="3">
-        <b-button
-          class="mx-auto"
-          style="background-color: #eee5ff; color: #8950fc; font-weight: bold"
-          ><span class="px-5">Voir</span></b-button
-        >
+        <router-link to="/pageTache">
+          <b-button
+            class="mx-auto"
+            style="background-color: #eee5ff; color: #8950fc; font-weight: bold"
+            ><span class="px-5">Voir</span></b-button
+          >
+        </router-link>
       </b-col>
     </b-row>
     <!-- Texte -->

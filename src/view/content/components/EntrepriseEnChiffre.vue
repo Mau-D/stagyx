@@ -12,7 +12,7 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
         >
           <v-list-item>
             <v-list-item-content>
-              <v-card-avatar class="mb-5">
+              <v-card-avatar class="mb-5" name="avatarUn">
                 <span class="symbol-label">
                   <span class="svg-icon svg-icon-3x" style="fill: #744568">
                     <!--begin::Svg Icon-->
@@ -42,7 +42,7 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
         >
           <v-list-item>
             <v-list-item-content>
-              <v-card-avatar class="mb-5">
+              <v-card-avatar class="mb-5" name="avatarDeux">
                 <span class="symbol-label">
                   <span class="svg-icon svg-icon-3x" style="fill: #744568">
                     <!--begin::Svg Icon-->

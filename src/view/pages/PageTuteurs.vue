@@ -38,7 +38,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
         </b-container>
       </b-col>
       <!-- section des deux cartes pour le nombres de stagiaires et d'entreprises -->
-      <b-col sm="3" class="bg-light">
+      <b-col sm="3" class="sectionDroiteTuteurs">
         <TuteurEnChiffre></TuteurEnChiffre>
       </b-col>
     </b-row>
@@ -58,4 +58,7 @@ export default {
 </script>
 
 <style scoped>
+.sectionDroiteTuteurs {
+  background-color: #ffffff
+}
 </style>

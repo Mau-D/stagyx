@@ -21,8 +21,17 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
         </b-container>
       </b-col>
       <!-- section filtre -->
-      <b-col sm="3" class="bg-light">
-        <FiltreStagiaires></FiltreStagiaires>
+      <b-col sm="3" class="sectionFiltre px-0 pl-2">
+        <b-row>
+          <b-col>
+            <h1 class="text-muted">Filtres</h1>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <FiltreStagiaires></FiltreStagiaires>
+          </b-col>
+        </b-row>
       </b-col>
     </b-row>
   </b-container>
@@ -42,4 +51,7 @@ export default {
 </script>
 
 <style scoped>
+.sectionFiltre {
+  background-color: #ffffff;
+}
 </style>

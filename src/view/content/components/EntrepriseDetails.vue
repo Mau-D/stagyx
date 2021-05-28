@@ -1,8 +1,8 @@
 <!--EntrepriseDetails.vue, Section des détails de l'entreprise
 Maud Harvey-Guillaume Labrecque, 5 Mai 2021-->
 <template>
-  <b-container class=" carteEntreprise  my-5">
-    <b-row class="py-5">
+  <b-container class=" carteEntrepriseDetail m-5">
+    <b-row class="p-5">
         <!-- Première COL Gauche-->
         <b-col cols="5" class="sectionGauche">
             <b-row class="imgEntreprise mb-5">
@@ -31,7 +31,7 @@ Maud Harvey-Guillaume Labrecque, 5 Mai 2021-->
         <!-- Seconde COL Centre-->
         <b-col cols="6" class="sectionDroite">
             <b-row class="text-muted">
-                <h5>Ses stagiaires</h5>
+                <h4>Ses stagiaires</h4>
             </b-row>
             <b-row>
                 <template v-for="(item, i) in list">
@@ -74,14 +74,14 @@ Maud Harvey-Guillaume Labrecque, 5 Mai 2021-->
         <b-col cols="1" class="iconEntreprise text-right"> 
           <!-- Modifier -->
           <span class="symbol-label">
-            <span class="svg-icon svg-icon-lg" style="fill: #3699ff">
+            <span class="svg-icon svg-icon-lg svg-icon-primary" >
               <inline-svg
                 src="media/svg/icons/Communication/Write.svg"
               ></inline-svg>
             </span>
           </span>
           <span class="symbol-label">
-            <span class="svg-icon svg-icon-lg" style="fill: #3699ff">
+            <span class="svg-icon svg-icon-lg " style="fill: #3699ff">
               <inline-svg
                 src="media/svg/icons/Communication/trash-can-outline.svg"
               ></inline-svg>
@@ -109,18 +109,6 @@ export default {
           company: "Intertico",
           company_desc: "Web, UI/UX Design",
           rate: "Best Rated",
-        },
-        {
-          img: "media/svg/avatars/018-girl-9.svg",
-          name: "Jessie Clarcson",
-          desc: "C#, ASP.NET, MS SQL",
-          paid: "$23,000,000",
-          status: "Pending",
-          status2: "Rejected",
-          amount: "$1,600",
-          company: "Agoda",
-          company_desc: "Houses & Hotels",
-          rate: "Above Average",
         }
       ],
     };
@@ -129,12 +117,17 @@ export default {
 </script>
 
 <style>
-.carteEntreprise {
-    background-color: #ffffff;
-    border-radius: 5px;
+
+.carteEntrepriseDetail {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+.sectionGauche {
+  padding: 10px !important;
 }
 .imgEntreprise img {
-    height: 50px;
+    height: 40px;
 }
 .responsable {
     display: flex;

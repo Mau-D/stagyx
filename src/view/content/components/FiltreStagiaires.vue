@@ -1,12 +1,7 @@
 <!--FiltreStagiaires.vue, Section de la PageStagiaires pour faire le tri du tableau (TableauStagiaires) par moyenne, non-tâche ou non-stage
 Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
 <template>
-  <b-container>
-    <!-- Titre -->
-    <b-row>
-      <h1 class="text-muted mt-5 mb-20">Filtres</h1>
-    </b-row>
-    <!-- Filtre par moyenne -->
+  <b-container class="carteFitre mt-5">
     <b-row>
       <div class="symbol symbol-25 mr-5" v-bind:class="`symbol-light-success`">
         <span class="symbol-label">

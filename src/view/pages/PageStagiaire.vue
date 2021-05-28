@@ -36,7 +36,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
         </b-row>
       </b-col>
       <!-- section filtre, aside de droite -->
-      <b-col sm="3" class="bg-light p-2">
+      <b-col sm="3" class="sectionDroite p-2">
         <Profils></Profils>
       </b-col>
     </b-row>
@@ -83,4 +83,7 @@ export default {
 };
 </script>   
 <style scoped>
+.sectionDroite {
+  background-color: #ffffff;
+}
 </style>

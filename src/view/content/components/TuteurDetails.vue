@@ -1,10 +1,10 @@
 <!--TuteurDetails.vue, Section des détails du tuteur
 Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
 <template>
-  <b-container class="bgWhite my-5">
+  <b-container class=" carteTuteurDetail bgWhite my-5">
     <b-row class="py-5">
       <!-- section gauche Tuteur -->
-      <b-col sm="6">
+      <b-col sm="5">
         <b-container fluid>
           <b-row>
             <b-col sm="5" class="font-weight-bold p-0">
@@ -41,7 +41,7 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
         >
       </b-col>
       <!-- section centre Stagiaires -->
-      <b-col sm="4">
+      <b-col sm="6">
         <h4 class="text-muted d-block">Stagiaires</h4>
         <div class="table-responsive">
           <table
@@ -79,7 +79,7 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
         </div>
       </b-col>
       <!-- section droite Action -->
-      <b-col sm="2" class="text-right">
+      <b-col sm="1" class="iconEntreprise text-right">
         <div>
           <!-- Modifier -->
           <span class="symbol-label">
@@ -157,6 +157,14 @@ export default {
 
 <style scoped>
 .bgWhite {
-  background-color: white;
+  background-color: #ffffff;
+}
+.carteTuteurDetail {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+}
+.iconEntreprise {
+    display: flex;
+    flex-direction: row;
 }
 </style>

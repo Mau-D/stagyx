@@ -211,7 +211,7 @@
     </router-link>
     <!-- entreprises -->
     <router-link
-      to="/entreprises"
+      to="/entreprise"
       v-slot="{ href, navigate, isActive, isExactActive }"
     >
       <li
@@ -231,7 +231,7 @@
     </router-link>
     <!-- évaluations -->
     <router-link
-      to="/evaluations"
+      to="/pageTache"
       v-slot="{ href, navigate, isActive, isExactActive }"
     >
       <li
@@ -251,7 +251,7 @@
     </router-link>
     <!-- rapports de stage -->
     <router-link
-      to="/rapportsstage"
+      to="/stagiaire"
       v-slot="{ href, navigate, isActive, isExactActive }"
     >
       <li

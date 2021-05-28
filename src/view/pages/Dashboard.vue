@@ -1,18 +1,21 @@
 <template>
   <div>
+    <router-view></router-view>
+  </div>
+  <!-- <div>
     <div>
-      <!--<router-link to="/groupes"> </router-link>-->
+      <router-link to="/groupes"> </router-link>
       <router-link to="/groupe">PageGroupe</router-link>
     </div>
     <div>
-      <!-- Test pour les routes imbriquées, dans la PageGroupe -->
+      Test pour les routes imbriquées, dans la PageGroupe
       <router-link to="/entreprise">Entreprise</router-link>
       <router-link to="/stagiaires">Stagiaires</router-link>
       <router-link to="/stagiaire">Stagiaire</router-link>
       <router-link to="/tuteurs">Tuteurs</router-link>
     </div>
 
-    <div>
+    <div> -->
       <!--begin::Dashboard-->
       <!--<b-row>
      
@@ -51,12 +54,10 @@
     </b-row>-->
       <!-- Links pour les test de routes -->
 
-      <div>
-        <router-view></router-view>
-      </div>
+      
       <!--end::Dashboard-->
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
 </template>
 
 <script>

@@ -7,15 +7,6 @@ export default new Router({
   routes: [
     {
       path: "/",
-<<<<<<< HEAD
-      redirect: "/PageTest",
-      component: () => import("@/view/layout/Layout"),
-      children: [
-        {
-          path: "/PageTest",
-          name: "PageTest",
-          component: () => import("@/view/pages/PageTest.vue"),
-=======
       redirect: "/Dashboard",
       component: () => import("@/view/layout/Layout"),
       children: [
@@ -25,16 +16,22 @@ export default new Router({
           component: () => import("@/view/pages/Dashboard.vue"),
           children:[
                //Test de route pour la PageGroupes et la PageGroupe
-    //  {
-    //       name: "groupes",
-    //       path: "/groupes",
-    //       component: () => import("@/view/pages/PageGroupes"),
-    //   },
+     {
+          name: "groupes",
+          path: "/groupes",
+          component: () => import("@/view/pages/PageGroupes"),
+      },
             {
               name: "groupe",
               path: "/groupe",
+              redirect: "/bilanGroupe",
               component: () => import("@/view/pages/PageGroupe"),
-              children: [
+              children: [ 
+                {
+                  path: "/bilanGroupe",
+                  name: "BilanGroupe",
+                  component: () => import("@/view/pages/PageBilanGroupe.vue"),
+                }, 
                 {
                   path: "/entreprise",
                   name: "Entreprise",
@@ -55,11 +52,15 @@ export default new Router({
                   name: "Tuteurs",
                   component: () => import("@/view/pages/PageTuteurs.vue"),
                 },  
+                 {
+                  path: "/pageTache",
+                  name: "PageTache",
+                  component: () => import("@/view/pages/PageTache.vue"),
+                },  
               ],
             },
           ]
             
->>>>>>> 7019b556a7d51dfa71028420a13feac23737b3e0
         },
         //Lors de la sélection d'un groupe redirigé vers PageGroupe avec le id=no.Groupe
         {

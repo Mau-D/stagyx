@@ -1,10 +1,39 @@
 <template>
-  <b-container fluid>
+  <b-container>
     <b-row>
       <b-col class="entreprise" cols="9">
-        <EntrepriseDetails />
+
+        <!-- titre -->
+          <b-row>
+            <b-col>
+              <h1 class="text-muted mt-5">Entreprises de stage</h1>
+            </b-col>
+          </b-row>
+          <!-- bouton -->
+          <b-row class="text-right">
+            <b-col>
+              <b-button variant="success" style="font-weight: bold">
+                <span class="symbol-label">
+                  <span class="svg-icon">
+                    <!--begin::Svg Icon-->
+                    <inline-svg
+                      src="media/svg/icons/Communication/Add-user.svg"
+                    ></inline-svg>
+                    <!--end::Svg Icon-->
+                  </span>
+                </span>
+                Nouveau</b-button
+              >
+            </b-col>
+          </b-row>
+
+          <b-row>
+            <b-col class="carteEntreprise p-0">
+              <EntrepriseDetails />
+            </b-col>
+          </b-row>
       </b-col>
-      <b-col class="encadreMauve" cols="3">
+      <b-col class="sectionDroiteEntreprise" cols="3">
         <EntrepriseEnChiffre />
       </b-col>
     </b-row>
@@ -23,13 +52,14 @@ export default {
 }
 </script>
 
-<style>
-/* .entreprise {
-  background-color: pink;
-  height: 80vh;
+<style scoped>
+.carteEntreprise {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-.encadreMauve {
-  background-color: blue;
-  height: 80vh;
-} */
+.sectionDroiteEntreprise {
+  background-color: #ffffff;
+  height: 100vh;
+}
 </style>

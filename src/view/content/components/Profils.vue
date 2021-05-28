@@ -1,11 +1,11 @@
 <!--Profils.vue, composant à trois sections, dans le aside de droite, pour le profil du stagaire sélectionné de son tuteur et de son entreprise-hôte
 Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
 <template>
-  <b-container fluid class="p-0">
+  <b-container fluid class="sectionDroite p-0">
     <!-- Profil du stagiaire -->
 
     <b-row class="my-5">
-      <b-col>
+      <b-col>       
         <h1 class="text-muted ml-0">Profil</h1>
         <p style="font-size: 1.3rem; font-weight: bold">Ginette Lebrun</p>
         <div class="d-flex justify-content-center">
@@ -18,12 +18,15 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
             >Modifier</b-button
           >
         </div>
-      </b-col>
+      </b-col> 
     </b-row>
     <!-- Profil du tuteur -->
+    
     <b-row class="my-5">
       <b-col>
-        <h1 class="text-muted">Tuteur</h1>
+
+          <CarteTuteurs />
+        <!-- <h1 class="text-muted">Tuteur</h1>
         <b-container>
           <b-row>
             <b-col sm="6" class="font-weight-bold">
@@ -38,7 +41,7 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
 
             <b-col sm="6">
               <span class="symbol-label">
-                <!--Pour la src dans un v-for      :src="item.img"       -->
+                Pour la src dans un v-for      :src="item.img"     
                 <img
                   src="media/svg/avatars/001-boy.svg"
                   class="h-75 align-self-end"
@@ -48,14 +51,14 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
               </span>
             </b-col>
           </b-row>
-        </b-container>
+        </b-container> -->
       </b-col>
     </b-row>
     <!-- Profil de l'entreprise -->
     <b-row class="my-5">
       <b-col>
         <h1 class="text-muted">Hôte</h1>
-        <b-container class="bg-light px-auto">
+        <b-container class="px-auto">
           <!-- image -->
           <b-row class="my-4">
             <b-img
@@ -102,10 +105,18 @@ Maud Harvey-Guillaume Labrecque, 4 mai 2021-->
 </template>
 
 <script>
+import CarteTuteurs from "./CarteTuteurs";
 export default {
   name: "Profils",
+  components: {
+    CarteTuteurs
+  },
 };
 </script>
+
+
+
+
 
 <style scoped>
 .imageEntreprise {

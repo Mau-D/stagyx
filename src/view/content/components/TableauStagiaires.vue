@@ -45,11 +45,13 @@ Maud Harvey-Guillaume Labrecque, 29 avril 2021-->
               </span>
             </div>
             <div class="my-auto">
-              <p
-                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg"
-              >
-                {{ item.identification.name }}
-              </p>
+              <router-link to="/stagiaire">
+                <p
+                  class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg"
+                >
+                  {{ item.identification.name }}
+                </p>
+              </router-link>
               <span class="text-muted font-weight-bold d-block">{{
                 item.identification.desc
               }}</span>
