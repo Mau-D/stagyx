@@ -24,8 +24,11 @@ Maud Harvey-Guillaume Labrecque, 14 mai 2021-->
           </b-row>
           <!-- Cartes des Groupe -->
           <b-row class="my-5">
-            <b-col sm="12" md="6" xl="4" v-for="n in 4" :key="n">
-              <CarteGroupe></CarteGroupe>
+            <b-col sm="12" md="6" xl="4" v-for="(result, idx) in results" :key="idx">
+              <CarteGroupe
+              :name="result.name"
+             
+              ></CarteGroupe>
             </b-col>
           </b-row>
           <b-row align-h="start" class="my-5">
@@ -53,6 +56,9 @@ Maud Harvey-Guillaume Labrecque, 14 mai 2021-->
 import CarteGroupe from "../content/components/CarteGroupe";
 import Archives from "../content/components/Archives";
 import Annonce from "../content/components/Annonce";
+//import {getGroupsTest} from "../../core/services/myservices";
+import { MyMixinAPI } from "../../core/services/myservices";
+
 
 export default {
   name: "PageGroupes",
@@ -61,7 +67,44 @@ export default {
     Archives,
     Annonce,
   },
-};
+  
+   mixins: [MyMixinAPI],
+ 
+  
+ 
+  // methods: {
+  //   getGroups()
+  //     {
+  //      myservices.test();
+  //      console.log("je suis dans getGroups");
+  //     }
+  //   },
+  // created: function(){
+  //   console.log("je suis dans le created");
+  //   this.getGroups();
+  // },
+ 
+  
+  
+}
+  
+ 
+
+  //Appel pour obtenir les groupes 
+//  async created() {
+//     await axios
+//       .get("https://stagyx-api.herokuapp.com/api/private/group/list", {
+//         headers: {
+//           Authorization:
+//             "BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWMxNDlmZWYyODRjMDM1YzhmNjQwNCIsIm5hbWUiOiJoY2xvdXRpZXIiLCJpYXQiOjE2MjIzNzc5MTAsImV4cCI6MTYyMjM4MTUxMH0.4O5uKaGwY2LWThyI--lmcFiBMVf0ObrmBaFtyDdhuOo",
+//           //the token is a variable which holds the token
+//         },
+//       })
+//       .then((res) => (this.todos = res))
+//       .catch((err) => console.log(err));
+//     console.log(this.todos);
+//   },
+// }
 </script>
 
 <style scoped>

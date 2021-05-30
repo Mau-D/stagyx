@@ -10,15 +10,15 @@ Maud Harvey-Guillaume Labrecque, 14 mai 2021-->
         img-alt="Card Image"
       >
         <b-card-body
-          title="GROUPE #1034"
-          sub-title="Genie mécanique NW.1045"
+          :title="name" 
+          :sub-title="programme"
           overlay
         >
           <b-card-text class="mt-4">
-            <p class="m-0"><strong>Début: </strong>15-06-2021</p>
-            <p class="m-0"><strong>Fin: </strong>15-08-2021</p>
-            <p class="m-0"><strong>Stagiaires: </strong>17</p>
-            <p class="m-0"><strong>Type: </strong>Alternance travail-études</p>
+            <p class="m-0"><strong>Début: </strong>{{dateDebut}}</p>
+            <p class="m-0"><strong>Fin: </strong>{{dateFin}}</p>
+            <p class="m-0"><strong>Stagiaires: </strong>{{nombreStagiaires}}</p>
+            <p class="m-0"><strong>Type: </strong>{{typeStage}}</p>
           </b-card-text>
         </b-card-body>
         <!-- Le router-link refuse de fonctionner... -->
@@ -33,6 +33,14 @@ Maud Harvey-Guillaume Labrecque, 14 mai 2021-->
 <script>
 export default {
   name: "CarteGroupe",
+  props:{
+    name: String,
+    programme:String,
+    dateDebut: Date,
+    dateFin: Date,
+    nombreStagiaires:Number,
+    typeStage: String
+  }
 };
 </script>
 
