@@ -2,12 +2,16 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "@/core/services/store";
-import ApiService from "@/core/services/api.service";
-import MockService from "@/core/mock/mock.service";
+//import ApiService from "@/core/services/api.service";
+//import MockService from "@/core/mock/mock.service";
 import { VERIFY_AUTH } from "@/core/services/store/auth.module";
 import { RESET_LAYOUT_CONFIG } from "@/core/services/store/config.module";
+// Axios interceptor for token
+//import interceptorsSetup from "./core/services/interceptor";
+import "./core/filters/datefilter"
 
 Vue.config.productionTip = false;
+//Filtre pour les dates
 
 // Global 3rd party plugins
 import "popper.js";
@@ -32,23 +36,25 @@ import "@mdi/font/css/materialdesignicons.css";
 import "@/core/plugins/formvalidation";
 
 // API service init
-ApiService.init();
+//ApiService.init();
 
 // Remove this to disable mock API
-MockService.init();
+//MockService.init();
 
-router.beforeEach((to, from, next) => {
-  // Ensure we checked auth before each page load.
-  Promise.all([store.dispatch(VERIFY_AUTH)]).then(next);
+ router.beforeEach((to, from, next) => {
+//   // Ensure we checked auth before each page load.
+   Promise.all([store.dispatch(VERIFY_AUTH)]).then(next);
 
-  // reset config to initial state
-  store.dispatch(RESET_LAYOUT_CONFIG);
+//   // reset config to initial state
+   store.dispatch(RESET_LAYOUT_CONFIG);
 
-  // Scroll page to top on every route change
+//   // Scroll page to top on every route change
   setTimeout(() => {
     window.scrollTo(0, 0);
   }, 100);
 });
+// Add token to header
+//interceptorsSetup();
 
 new Vue({
   router,

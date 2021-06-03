@@ -1,5 +1,6 @@
 <template>
     <div>
+      
         <b-row class="containerMessageImportant">
             <MessageImportant />
         </b-row>
@@ -47,6 +48,7 @@ import TachesFeed from '../content/components/TachesFeed'
 import MessageImportant from '../content/components/MessageImportant'
 import CarteTuteurs from '../content/components/CarteTuteurs'
 import Chat from '../content/components/Chat'
+
 export default {
     name: "PageBilanGroupe",
     components: {
@@ -56,7 +58,14 @@ export default {
         MessageImportant,
         CarteTuteurs,
         Chat,
-  }
+    },
+    data(){
+        return{
+            results: this.resultsGroup,
+        }
+    },
+   
+   
 }
 </script>
 

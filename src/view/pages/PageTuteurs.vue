@@ -54,6 +54,7 @@ export default {
     TuteurEnChiffre,
     TuteurDetails,
   },
+  
 };
 </script>
 

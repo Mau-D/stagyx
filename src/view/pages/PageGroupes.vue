@@ -24,10 +24,14 @@ Maud Harvey-Guillaume Labrecque, 14 mai 2021-->
           </b-row>
           <!-- Cartes des Groupe -->
           <b-row class="my-5">
-            <b-col sm="12" md="6" xl="4" v-for="(result, idx) in results" :key="idx">
+            <b-col sm="12" md="6" xl="4" v-for="(result, idx) in resultsGroups" :key="idx">
               <CarteGroupe
-              :name="result.name"
-             
+              :id="result._id"
+              :groupName="result.name"
+              :schedule="result.schedule"
+              :startDate="result.startDate"
+              :endDate="result.endDate"
+              :type="result.type"
               ></CarteGroupe>
             </b-col>
           </b-row>
@@ -56,9 +60,7 @@ Maud Harvey-Guillaume Labrecque, 14 mai 2021-->
 import CarteGroupe from "../content/components/CarteGroupe";
 import Archives from "../content/components/Archives";
 import Annonce from "../content/components/Annonce";
-//import {getGroupsTest} from "../../core/services/myservices";
-import { MyMixinAPI } from "../../core/services/myservices";
-
+import { MyMixinGetGroups } from "../../core/services/serviceGetGroups";
 
 export default {
   name: "PageGroupes",
@@ -67,44 +69,13 @@ export default {
     Archives,
     Annonce,
   },
-  
-   mixins: [MyMixinAPI],
- 
-  
- 
-  // methods: {
-  //   getGroups()
-  //     {
-  //      myservices.test();
-  //      console.log("je suis dans getGroups");
-  //     }
-  //   },
-  // created: function(){
-  //   console.log("je suis dans le created");
-  //   this.getGroups();
-  // },
- 
-  
-  
+  data: function (){
+    return{
+      resultsGroups: []
+      }
+  },
+   mixins: [MyMixinGetGroups],
 }
-  
- 
-
-  //Appel pour obtenir les groupes 
-//  async created() {
-//     await axios
-//       .get("https://stagyx-api.herokuapp.com/api/private/group/list", {
-//         headers: {
-//           Authorization:
-//             "BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWMxNDlmZWYyODRjMDM1YzhmNjQwNCIsIm5hbWUiOiJoY2xvdXRpZXIiLCJpYXQiOjE2MjIzNzc5MTAsImV4cCI6MTYyMjM4MTUxMH0.4O5uKaGwY2LWThyI--lmcFiBMVf0ObrmBaFtyDdhuOo",
-//           //the token is a variable which holds the token
-//         },
-//       })
-//       .then((res) => (this.todos = res))
-//       .catch((err) => console.log(err));
-//     console.log(this.todos);
-//   },
-// }
 </script>
 
 <style scoped>

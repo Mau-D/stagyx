@@ -1,6 +1,6 @@
 <template>
-  <!--Enlever la condition -->
-  <div class="d-flex flex-column flex-root" v-if="isAuthenticated">
+  <!--Enlever la condition  v-if="isAuthenticated"-->
+  <div class="d-flex flex-column flex-root" >
     <!-- begin:: Header Mobile -->
     <KTHeaderMobile></KTHeaderMobile>
     <!-- end:: Header Mobile -->
@@ -89,9 +89,9 @@ export default {
   },
   mounted() {
     // check if current user is authenticated
-    if (!this.isAuthenticated) {
-      this.$router.push({ name: "login" });
-    }
+    // if (!this.isAuthenticated) {
+    //   this.$router.push({ name: "login" });
+    // }
 
     // Simulate the delay page loading
     setTimeout(() => {
@@ -102,7 +102,7 @@ export default {
   methods: {},
   computed: {
     ...mapGetters([
-      "isAuthenticated",
+      //"isAuthenticated",
       "breadcrumbs",
       "pageTitle",
       "layoutConfig",

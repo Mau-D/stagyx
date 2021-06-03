@@ -13,6 +13,7 @@ export default new Router({
         {
           path: "/Dashboard",
           name: "Dashboard",
+          redirect:"/groupes",
           component: () => import("@/view/pages/Dashboard.vue"),
           children:[
                //Test de route pour la PageGroupes et la PageGroupe
@@ -28,7 +29,7 @@ export default new Router({
               component: () => import("@/view/pages/PageGroupe"),
               children: [ 
                 {
-                  path: "/bilanGroupe",
+                  path: "/bilanGroupe/:groupeId",
                   name: "BilanGroupe",
                   component: () => import("@/view/pages/PageBilanGroupe.vue"),
                 }, 
@@ -63,20 +64,20 @@ export default new Router({
             
         },
         //Lors de la sélection d'un groupe redirigé vers PageGroupe avec le id=no.Groupe
-        {
-          path: "/pagegroupe",
-          name: "page-groupe",
-          component: () =>
-            import("@/view/pages/PageGroupe.vue"),
-            children: [
-            {
-              path: "/stagiaires",
-              name: "Stagiaires",
-              component: () => import("@/view/pages/PageStagiaires.vue"),
-            },
-          ]
+        // {
+        //   path: "/pagegroupe",
+        //   name: "page-groupe",
+        //   component: () =>
+        //     import("@/view/pages/PageGroupe.vue"),
+        //     children: [
+        //     {
+        //       path: "/stagiaires",
+        //       name: "Stagiaires",
+        //       component: () => import("@/view/pages/PageStagiaires.vue"),
+        //     },
+        //   ]
 
-        }
+        // }
       ],
     },
     {
@@ -95,6 +96,16 @@ export default new Router({
         },
       ],
     },
+    {
+      path: "*",
+      redirect: "/404"
+    },
+    {
+      // the 404 route, when none of the above matches
+      path: "/404",
+      name: "404",
+      component: () => import("@/view/pages/error/Error-1.vue")
+    }
     
     ],
 });

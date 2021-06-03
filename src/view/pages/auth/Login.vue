@@ -19,9 +19,9 @@
     <!--begin::Signin-->
     <div class="login-form login-signin">
       <div class="text-center mb-10 mb-lg-20">
-        <h3 class="font-size-h1">Sign In</h3>
+        <h3 class="font-size-h1">Connexion</h3>
         <p class="text-muted font-weight-semi-bold">
-          Enter your username and password
+         Entrer le courriel et le mot de passe
         </p>
       </div>
 
@@ -29,8 +29,8 @@
       <b-form class="form" @submit.stop.prevent="onSubmit">
         <div role="alert" class="alert alert-info">
           <div class="alert-text">
-            Use account <strong>admin@demo.com</strong> and password
-            <strong>demo</strong> to continue.
+            Utiliser <strong>hugo.cloutier@cegeptr.qc.ca</strong> et le mot de passe
+            <strong>Admin123!</strong> pour continuer.
           </div>
         </div>
 
@@ -129,8 +129,8 @@ export default {
     return {
       // Remove this dummy login info
       form: {
-        email: "admin@demo.com",
-        password: "demo"
+        email: "hugo.cloutier@cegeptr.qc.ca",
+        password: "Admin123!"
       }
     };
   },

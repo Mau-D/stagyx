@@ -65,7 +65,7 @@
               </div>
               <div class="form-group">
                 <label class="font-size-h6 font-weight-bolder text-dark"
-                  >Email</label
+                  >Courriel</label
                 >
                 <div
                   id="example-input-group-1"
@@ -84,13 +84,13 @@
               <div class="form-group">
                 <div class="d-flex justify-content-between mt-n5">
                   <label class="font-size-h6 font-weight-bolder text-dark pt-5"
-                    >Password</label
+                    >Mot de passe</label
                   >
                   <a
                     class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
                     id="kt_login_forgot"
                     @click="showForm('forgot')"
-                    >Forgot Password ?</a
+                    >Mot de passe oublié ?</a
                   >
                 </div>
                 <div
@@ -113,7 +113,7 @@
                   ref="kt_login_signin_submit"
                   class="btn btn-primary font-weight-bolder font-size-h6 px-15 py-4 my-3 mr-3"
                 >
-                  Sign In
+                  Connexion
                 </button>
                 <button
                   type="button"
@@ -123,7 +123,7 @@
                     <inline-svg
                       src="media/svg/social-icons/google.svg"
                     /> </span
-                  >Sign in with Google
+                  >Connexion avec Google
                 </button>
               </div>
             </form>
@@ -309,8 +309,8 @@ export default {
       state: "signin",
       // Remove this dummy login info
       form: {
-        email: "admin@demo.com",
-        password: "demo"
+        email: "hugo.cloutier@cegeptr.qc.ca",
+        password: "Admin123!"
       }
     };
   },

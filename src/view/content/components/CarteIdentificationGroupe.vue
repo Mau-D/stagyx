@@ -19,17 +19,17 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
       </b-dropdown>
     </div>
     <v-card-text class="text-light pl-1">
-      <h4 class="mb-4">Développement web Front-End</h4>
+      <h4 class="mb-4">{{schedule}}</h4>
 
       <div class="text-left pl-4">
-        <p><strong>Début: </strong>2021-05-13</p>
-        <p><strong>Fin: </strong>2021-07-13</p>
-        <p><strong>Session: </strong>Été 2021</p>
-        <p><strong>Stagiaires: </strong>17</p>
-        <p><strong>Type: </strong>Alternance travail-études</p>
+        <p><strong>Début: </strong>{{startDate | date}}</p>
+        <p><strong>Fin: </strong>{{endDate | date}}</p>
+        <p><strong>Session: </strong>Nom de la session</p>
+        <p><strong>Stagiaires: </strong>Nombre de stagiaires</p>
+        <p><strong>Type: </strong>{{type}}</p>
       </div>
       <div class="text-right">
-        <h1>#1038</h1>
+        <h1>{{groupName}}</h1>
       </div>
     </v-card-text>
   </v-card>
@@ -38,6 +38,13 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
 <script>
 export default {
   name: "CarteIdentificationGroupe",
+props:{ 
+    groupName: String,
+    schedule:String,
+    startDate: String,
+    endDate: String,
+    type: String
+  }
 };
 </script>
 
