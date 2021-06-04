@@ -1,16 +1,15 @@
 <template>
-    <div>
-      
+    <div class="mr-5">
         <b-row class="containerMessageImportant">
             <MessageImportant />
         </b-row>
         <b-row class="containerInfo">
             <b-col cols="8" class="leftSection">
                 <b-row class="graphiqueTache">
-                    <b-col>
+                    <b-col cols="6">
                         <TacheStat />
                     </b-col>
-                    <b-col>
+                    <b-col cols="6">
                         <TacheStatDeux />
                     </b-col>
                 </b-row>
