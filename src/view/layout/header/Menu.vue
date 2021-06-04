@@ -1,4 +1,5 @@
 <template>
+<div>
   <ul class="menu-nav">
     <router-link
       to="/groupes"
@@ -75,9 +76,9 @@
         </a>
       </li>
     </router-link>
-
-
   </ul>
+  
+  </div>
 </template>
 
 <script>
