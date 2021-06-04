@@ -9,13 +9,10 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
         size="sm"
         text="Changer de groupe"
         class="p-2 text-light"
+        
       >
-        <b-dropdown-item>First Action</b-dropdown-item>
-        <b-dropdown-item>Second Action</b-dropdown-item>
-        <b-dropdown-item>Third Action</b-dropdown-item>
-        <b-dropdown-divider></b-dropdown-divider>
-        <b-dropdown-item active>Active action</b-dropdown-item>
-        <b-dropdown-item disabled>Disabled action</b-dropdown-item>
+        <b-dropdown-item v-for="group in resultsGroups" :key="group.name" v-show="group.name != groupName"  @click="changeGroup(group._id)">{{group.name}}</b-dropdown-item>
+      
       </b-dropdown>
     </div>
     <v-card-text class="text-light pl-1">
@@ -39,11 +36,17 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
 export default {
   name: "CarteIdentificationGroupe",
 props:{ 
+    resultsGroups: Array,
     groupName: String,
     schedule:String,
     startDate: String,
     endDate: String,
     type: String
+  },
+  methods:{
+    changeGroup: function(id){
+      this.$router.push({ name: 'BilanGroupe', params: { groupeId:  id} })
+    }
   }
 };
 </script>

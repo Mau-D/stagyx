@@ -18,7 +18,7 @@ export var MyMixinGetGroups = {
             await axios.get("https://stagyx-api.herokuapp.com/api/private/group/list", {
                 headers: {
                 Authorization:
-                    "BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWMxNDlmZWYyODRjMDM1YzhmNjQwNCIsIm5hbWUiOiJoY2xvdXRpZXIiLCJpYXQiOjE2MjI3NTEzNjEsImV4cCI6MTYyMjc1NDk2MX0.3RjwvlYDrwVqYUuJrXYuB_5ncf5SQWE99VwQDGYhtts",
+                    "BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWMxNDlmZWYyODRjMDM1YzhmNjQwNCIsIm5hbWUiOiJoY2xvdXRpZXIiLCJpYXQiOjE2MjI3Njg0NjgsImV4cCI6MTYyMjc3MjA2OH0.7UXwHxpjFIqNPDXYcwG4cJjJHM1VfhjBBWRuvas7Xeg",
                 //the token is a variable which holds the token
                 },
             })

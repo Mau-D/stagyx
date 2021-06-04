@@ -15,6 +15,7 @@ Maud Harvey-Guillaume Labrecque, 26 avril 2021-->
             :startDate="group.startDate"
             :endDate="group.endDate"
             :type="group.type"
+            :resultsGroups="resultsGroups"
           ></CarteIdentificationGroupe>
         </div>
          </span>
